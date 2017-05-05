@@ -1,0 +1,45 @@
+.active a{
+     color: #999999;
+     background-color: #333333;
+}
+.active2 a{
+     color: #efefef;
+    background: black
+}
+.cartinfo{
+    margin: 50px 150px 150px;
+    border: solid 1px;
+    border-color: #999999;
+}
+.module {
+    font-size: 1.5em;
+    border-bottom:solid 1px;
+    border-color: #999999;
+}
+.module p{
+     background-color: #bbbbbb;
+     margin:0;
+     height:70px;
+     line-height:70px;
+     padding-left: 40px;
+}
+.detail{
+    padding: 20px 20px 50px 20px;
+}
+.detail table {
+    width: 100%;
+    border: solid 1px;
+    border-collapse: collapse;
+    border-color: #999999;
+
+}
+.detail th {
+    border: 1px solid;
+    border-color: #999999;
+    height: 50px;
+}
+.detail td{
+    border: solid 1px;
+    border-color: #999999;
+    text-align:center;
+}

@@ -1,0 +1,30 @@
+{% extends 'pos/homepage.html' %}
+{% block content %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/shopping_list.css' %}">
+    <div class="listinfo">
+        <div class="element">
+            <p>商品列表</p>
+        </div>
+        <div class="list">
+            <table>
+                    <tr>
+                        <th>分类</th>
+                        <th>名称</th>
+                        <th>单价(元)</th>
+                        <th>单位</th>
+                        <th>   </th>
+                    </tr>
+                {% for goodslist in goodslists %}
+                    <tr>
+                        <td>{{ goodslist.type }}</td>
+                        <td>{{ goodslist.name }}</td>
+                        <td>{{ goodslist.price }}</td>
+                        <td>{{ goodslist.unit }}</td>
+                        <td><button>加入购物车</button></td>
+                    </tr>
+                 {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock content %}

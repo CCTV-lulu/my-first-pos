@@ -1,0 +1,56 @@
+
+.active a{
+     color: #999999;
+     background-color: #333333;
+}
+.active1 a{
+     color: #efefef;
+    background: black
+}
+.listinfo{
+    margin: 50px 150px 150px;
+    border: solid 1px;
+    border-color: #999999;
+}
+.element {
+
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom:solid 1px;
+    border-color: #999999;
+}
+.element p{
+     background-color: #bbbbbb;
+     margin:0;
+     height:70px;
+     line-height:70px;
+}
+.list{
+    padding: 20px 20px 50px 20px;
+}
+.list table {
+    width: 100%;
+    border: solid 1px;
+    border-collapse: collapse;
+    border-color: #999999;
+
+}
+.list th {
+    border: 1px solid;
+    border-color: #999999;
+    height: 50px;
+}
+.list td{
+    border: solid 1px;
+    border-color: #999999;
+    text-align:center;
+}
+.list button{
+    background-color: royalblue;
+    border-radius: 5px;
+    border: none;
+    color: #efefef;
+    margin: 10px;
+    width: 100px;
+    height: 50px;
+}

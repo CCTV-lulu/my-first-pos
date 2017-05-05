@@ -1,0 +1,31 @@
+{% extends 'pos/homepage.html' %}
+{% block content %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/shopping_cart.css' %}">
+    <div class="cartinfo">
+        <div class="module">
+            <p>购物清单</p>
+        </div>
+        <div class="detail">
+            <table>
+                <tr>
+                    <th>分类</th>
+                    <th>名称</th>
+                    <th>单价</th>
+                    <th>单位</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+{% endblock content %}
