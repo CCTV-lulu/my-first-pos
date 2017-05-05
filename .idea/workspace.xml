@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2834187e-488e-4c3a-a16e-8d31262edf66" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pos/static/css/shopping_cart.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pos/static/css/shopping_list.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pos/templates/pos/shopping_cart.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pos/static/css/pos.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pos/templates/pos/pos_list.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/urls.py" afterPath="$PROJECT_DIR$/mysite/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pos/admin.py" afterPath="$PROJECT_DIR$/pos/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pos/models.py" afterPath="$PROJECT_DIR$/pos/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pos/urls.py" afterPath="$PROJECT_DIR$/pos/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pos/views.py" afterPath="$PROJECT_DIR$/pos/views.py" />
-    </list>
+    <list default="true" id="2834187e-488e-4c3a-a16e-8d31262edf66" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/pos/templates/pos/shopping_cart.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
-              <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+              <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -900,7 +885,7 @@
     <entry file="file://$PROJECT_DIR$/pos/templates/pos/shopping_cart.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding />
         </state>
       </provider>
