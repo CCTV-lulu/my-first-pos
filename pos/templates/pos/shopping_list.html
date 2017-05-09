@@ -2,6 +2,7 @@
 {% block content %}
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/shopping_list.css' %}">
+    <script src="{% static 'javascript/goods_list.js' %}"></script>
     <div class="listinfo">
         <div class="element">
             <p>商品列表</p>
@@ -21,7 +22,7 @@
                         <td>{{ goodslist.name }}</td>
                         <td>{{ goodslist.price }}</td>
                         <td>{{ goodslist.unit }}</td>
-                        <td><button>加入购物车</button></td>
+                        <td><button class="input" id="{{goodslist.id}}" >加入购物车</button></td>
                     </tr>
                  {% endfor %}
             </table>
