@@ -11,13 +11,25 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='ShoppingList',
+            name='GoodsList',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(serialize=False, verbose_name='ID', primary_key=True, auto_created=True)),
                 ('type', models.TextField()),
                 ('name', models.TextField()),
                 ('price', models.TextField()),
                 ('unit', models.TextField()),
+            ],
+        ),
+        migrations.CreateModel(
+            name='ItemList',
+            fields=[
+                ('id', models.AutoField(serialize=False, verbose_name='ID', primary_key=True, auto_created=True)),
+                # ('goods_id', models.IntegerField(default=0)),
+                ('type', models.TextField()),
+                ('name', models.TextField()),
+                ('price', models.TextField()),
+                ('unit', models.TextField()),
+                ('count', models.IntegerField()),
             ],
         ),
     ]

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models, migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
@@ -11,8 +11,9 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RenameModel(
-            old_name='ShoppingList',
-            new_name='GoodsList',
+        migrations.AddField(
+            model_name='itemlist',
+            name='goods_id',
+            field=models.IntegerField(default=0),
         ),
     ]

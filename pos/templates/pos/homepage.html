@@ -11,7 +11,7 @@
         <li class="active3"><a href="shopping_list.html">Let's go</a></li>
         <li class="active"><a href="homepage.html">主页</a></li>
         <li class="active1"><a href="shopping_list.html">商品列表</a></li>
-        <li class="active2"><a href="shopping_cart.html"><img src="{% static 'picture/cart.jpg' %}"> 购物车(0)</a></li>
+        <li class="active2"><a href="shopping_cart.html"><img src="{% static 'picture/cart.jpg' %}"> 购物车(<span id="number">{{ sum_count }}</span>)</a></li>
     </ul>
 </div>
  {% block content %}
