@@ -16,14 +16,23 @@
                     <th>数量</th>
                     <th>小计</th>
                 </tr>
+                {% for itemlist in itemlists %}
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ itemlist.type }}</td>
+                    <td>{{ itemlist.name }}</td>
+                    <td>{{ itemlist.price }}</td>
+                    <td>{{ itemlist.unit }}</td>
+                    <td>
+                        <div id="math">
+                            <button class="left"> - </button>
+                            <span>{{ itemlist.count }}</span>
+                            <button class="right"> + </button>
+                        </div>
+
+                    </td>
                     <td></td>
                 </tr>
+                {% endfor %}
             </table>
         </div>
     </div>

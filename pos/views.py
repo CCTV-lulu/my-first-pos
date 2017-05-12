@@ -4,18 +4,15 @@ from .models import ItemList
 from django.http import HttpResponse
 # Create your views here.
 def homepage(request):
-    return render(request, 'pos/homepage.html', {})
+    return render(request, 'pos/homepage.html', {'sum_count': ItemList.sum_count()})
 def shopping_list(request):
-    goodslists = GoodsList.objects.all()
-    sum_count = 0
-    for c in ItemList.objects.all():
-        sum_count += c.count
+    goodlists = GoodsList.objects.all()
     if request.method=='POST':
         goods=GoodsList.objects.filter(id=request.POST['id'])
-        cartchange=ItemList.objects.filter(goods_id=request.POST['id'])
-        if cartchange:
-             cartchange[0].count+=1
-             cartchange[0].save()
+        buy_goods=ItemList.objects.filter(goods_id=request.POST['id'])
+        if buy_goods:
+            buy_goods[0].count+=1
+            buy_goods[0].save()
         else:
             ItemList.objects.create(
                 goods_id=goods[0].id,
@@ -25,11 +22,11 @@ def shopping_list(request):
                 unit=goods[0].unit,
                 count=1
             )
-        sum_count +=1
-        return HttpResponse(sum_count)
-    return render(request, 'pos/shopping_list.html', {'goodslists': goodslists,'sum_count':sum_count})
+        return HttpResponse(ItemList.sum_count())
+    return render(request, 'pos/shopping_list.html', {'goodlists': goodlists,'sum_count': ItemList.sum_count()})
 def shopping_cart(request):
-    return render(request, 'pos/shopping_cart.html',{})
+    itemlists=ItemList.objects.all()
+    return render(request, 'pos/shopping_cart.html',{'itemlists':itemlists,'sum_count': ItemList.sum_count()})
 
 
 

@@ -31,15 +31,43 @@
     border: solid 1px;
     border-collapse: collapse;
     border-color: #999999;
-
+    table-layout:fixed;
 }
 .detail th {
     border: 1px solid;
     border-color: #999999;
     height: 50px;
+    width: 16%;
 }
 .detail td{
     border: solid 1px;
     border-color: #999999;
     text-align:center;
+}
+.left{
+    background-color: transparent;
+    border: none;
+    border-right: solid 1px #999999;
+    height: 35px;
+    width: 35px;
+    float: left;
+}
+.right{
+    background-color: transparent;
+    border: none;
+    border-left: solid 1px #999999;
+    height: 35px;
+    width: 35px;
+    float: right;
+}
+#math{
+    border-radius: 5px;
+    border: solid 1px;
+    height: 35px;
+    width: 105px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-color: #999999;
 }

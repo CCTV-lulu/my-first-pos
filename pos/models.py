@@ -12,5 +12,9 @@ class ItemList(models.Model):
     price=models.TextField()
     unit=models.TextField()
     count=models.IntegerField()
-
+    def sum_count():
+        sum_count = 0
+        for goods in ItemList.objects.all():
+            sum_count+=goods.count
+        return sum_count
 
