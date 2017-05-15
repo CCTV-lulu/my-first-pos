@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <script src="{% static 'javascript/link.js' %}"></script>
+    <script src="{% static 'javascript/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'javascript/goods_list.js' %}"></script>
+</head>
+<body>
+<div class="menu">
+    <div class="nation">Let'Go</div>
+    <div class="nation {% block home %}{% endblock %}"onclick="home()">主页</div>
+    <div class="nation {% block list %}{% endblock %}"onclick="shoppinglist()">商品列表</div>
+    <div class="nation last {% block cart %}{% endblock %}"onclick="cart()">
+        <img src="{% static 'picture/cart.jpg' %}">购物车(<span id="number">{{ sum_count }}</span>)</div>
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

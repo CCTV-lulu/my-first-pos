@@ -1,11 +1,4 @@
-.active a{
-     color: #999999;
-     background-color: #333333;
-}
-.active2 a{
-     color: #efefef;
-    background: black
-}
+
 .cartinfo{
     margin: 50px 150px 150px;
     border: solid 1px;
@@ -60,7 +53,7 @@
     width: 35px;
     float: right;
 }
-#math{
+#math {
     border-radius: 5px;
     border: solid 1px;
     height: 35px;
@@ -70,4 +63,8 @@
     margin-bottom: 10px;
     text-align: center;
     border-color: #999999;
+}
+.countinfo  {
+    height: 35px;
+    line-height: 35px;
 }

@@ -1,4 +1,5 @@
-{% extends 'pos/homepage.html' %}
+{% extends 'pos/base.html' %}
+{% block cart %}active{% endblock %}
 {% block content %}
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/shopping_cart.css' %}">
@@ -25,7 +26,7 @@
                     <td>
                         <div id="math">
                             <button class="left"> - </button>
-                            <span>{{ itemlist.count }}</span>
+                            <span class="countinfo">{{ itemlist.count }}</span>
                             <button class="right"> + </button>
                         </div>
 

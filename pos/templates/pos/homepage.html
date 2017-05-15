@@ -1,20 +1,8 @@
-{% load staticfiles %}
-<html>
-<head>
+{% extends 'pos/base.html' %}
+{% block home %}active{% endblock %}
+{% block content %}
+    {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
-    <script src="{% static 'javascript/jquery-3.2.1.js' %}"></script>
-     <script src="{% static 'javascript/goods_list.js' %}"></script>
-</head>
-<body>
-<div class="menu">
-    <ul>
-        <li class="active3"><a href="shopping_list.html">Let's go</a></li>
-        <li class="active"><a href="homepage.html">主页</a></li>
-        <li class="active1"><a href="shopping_list.html">商品列表</a></li>
-        <li class="active2"><a href="shopping_cart.html"><img src="{% static 'picture/cart.jpg' %}"> 购物车(<span id="number">{{ sum_count }}</span>)</a></li>
-    </ul>
-</div>
- {% block content %}
 <div class="info">
    <h1>welcome to Let's go!</h1>
     <p>
@@ -25,5 +13,3 @@
     <button><a href="shopping_list.html">Let's Go</a></button>
 </div>
 {% endblock content %}
-</body>
-</html>

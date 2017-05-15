@@ -4,44 +4,39 @@ body {
     font-family: Loma;
 }
 
-.menu ul {
-    list-style-type: none;
-    overflow: hidden;
-    background-color: #333333;
-    padding: 0 150px;
-    font-size: 20px;
-
+.menu{
+    background-color:#373737 ;
+    height: 80px;
 }
-
-.menu li {
-    display: inline;
+.active1{
+    margin: 0 0 0 120px;
+    padding: 0 10px;
+}
+.nation {
+    color: #bebdc1;
+    width: 90px;
     float: left;
-}
-
-.menu li a:link,
-
-a:visited {
-    display: block;
-    color: #999999;
-    padding: 20px;
-    text-decoration: none;
-    height: 40px;
+    line-height: 80px;
+    font-size: 18px;
     text-align: center;
-    line-height: 40px;
+    /*text-decoration: blink;*/
+    /*cursor: pointer;*/
+    font-weight: bold;
+    padding: 0 10px;
 }
-
-.menu a:hover {
-    color: #efefef;
+.active{
+    color: white;
     background-color: black;
 }
-
-.menu li:last-child {
+.last{
+    margin: 0 120px 0 0;
+    width: 110px;
     float: right;
-    display: inline;
+    padding: 0 10px;
 }
-.active a {
-    color: #efefef;
-    background: black
+.nation:hover{
+    background-color: black;
+    color: white;
 }
 
 .info button{
@@ -49,7 +44,6 @@ a:visited {
     width: 100px;
     height: 50px;
     border: none;
-    color: #efefef;
     text-align: center;
     border-radius: 10px;
     outline: none;
@@ -58,6 +52,7 @@ a:visited {
 }
 .info button a{
     text-decoration: none;
+    color: white;
 }
 
 .info {

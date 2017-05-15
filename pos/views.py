@@ -14,14 +14,15 @@ def shopping_list(request):
             buy_goods[0].count+=1
             buy_goods[0].save()
         else:
-            ItemList.objects.create(
-                goods_id=goods[0].id,
-                type=goods[0].type,
-                name=goods[0].name,
-                price=goods[0].price,
-                unit=goods[0].unit,
-                count=1
-            )
+             new_item={
+                 'count':1,
+                 'goods_id':goods[0].id,
+                 'type':goods[0].type,
+                 'name':goods[0].name,
+                 'price':goods[0].price,
+                 'unit':goods[0].unit
+             }
+             ItemList.objects.create(**new_item)
         return HttpResponse(ItemList.sum_count())
     return render(request, 'pos/shopping_list.html', {'goodlists': goodlists,'sum_count': ItemList.sum_count()})
 def shopping_cart(request):
