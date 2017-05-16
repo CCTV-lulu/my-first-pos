@@ -8,7 +8,6 @@ $(document).ready(function () {
             success:function(sum_count){
                 $("#number").text(sum_count)
             }
-
        })
     })
 })

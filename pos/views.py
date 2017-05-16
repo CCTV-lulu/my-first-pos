@@ -27,6 +27,15 @@ def shopping_list(request):
     return render(request, 'pos/shopping_list.html', {'goodlists': goodlists,'sum_count': ItemList.sum_count()})
 def shopping_cart(request):
     itemlists=ItemList.objects.all()
+    if request.method=='POST':
+        means=request.POST['count']
+        item=ItemList.objects.filter(goods_id=request.POST['id'])
+        if item:
+            item[0].count=item[0].count+int(means)
+            if item[0].count>0:
+                item[0].save()
+            else:item[0].delete()
+        return HttpResponse(item[0].count)
     return render(request, 'pos/shopping_cart.html',{'itemlists':itemlists,'sum_count': ItemList.sum_count()})
 
 

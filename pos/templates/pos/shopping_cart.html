@@ -3,6 +3,7 @@
 {% block content %}
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/shopping_cart.css' %}">
+    <script src="{% static 'javascript/cart.js' %}"></script>
     <div class="cartinfo">
         <div class="module">
             <p>购物清单</p>
@@ -25,9 +26,9 @@
                     <td>{{ itemlist.unit }}</td>
                     <td>
                         <div id="math">
-                            <button class="left"> - </button>
+                            <button class="left" id="{{ itemlist.goods_id }}"> - </button>
                             <span class="countinfo">{{ itemlist.count }}</span>
-                            <button class="right"> + </button>
+                            <button class="right" id="{{ itemlist.goods_id }}"> + </button>
                         </div>
 
                     </td>
@@ -37,5 +38,4 @@
             </table>
         </div>
     </div>
-
 {% endblock content %}

@@ -4,11 +4,11 @@
     <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
     <script src="{% static 'javascript/link.js' %}"></script>
     <script src="{% static 'javascript/jquery-3.2.1.js' %}"></script>
-    <script src="{% static 'javascript/goods_list.js' %}"></script>
+{#    <script src="{% static 'javascript/goods_list.js' %}"></script>#}
 </head>
 <body>
 <div class="menu">
-    <div class="nation">Let'Go</div>
+    <div class="nation first">Let's Go</div>
     <div class="nation {% block home %}{% endblock %}"onclick="home()">主页</div>
     <div class="nation {% block list %}{% endblock %}"onclick="shoppinglist()">商品列表</div>
     <div class="nation last {% block cart %}{% endblock %}"onclick="cart()">
