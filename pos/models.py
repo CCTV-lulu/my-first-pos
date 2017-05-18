@@ -12,9 +12,16 @@ class ItemList(models.Model):
     price=models.TextField()
     unit=models.TextField()
     count=models.IntegerField()
-    def sum_count():
+    total=models.FloatField(default=0)
+    @classmethod
+    def sum_count(cls):
         sum_count = 0
         for goods in ItemList.objects.all():
             sum_count+=goods.count
         return sum_count
+    @classmethod
+    def totality(cls):
+        totality=(cls.count)*int(cls.price)
+        return totality
+
 

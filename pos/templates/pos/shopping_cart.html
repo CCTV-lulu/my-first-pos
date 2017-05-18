@@ -30,12 +30,10 @@
                             <span class="countinfo">{{ itemlist.count }}</span>
                             <button class="right" id="{{ itemlist.goods_id }}"> + </button>
                         </div>
-
                     </td>
-                    <td></td>
+                    <td><span id="subtotal">{{ totality }}元</span></td>
                 </tr>
                 {% endfor %}
-            </table>
         </div>
     </div>
 {% endblock content %}
