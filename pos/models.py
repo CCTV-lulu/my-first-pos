@@ -19,10 +19,7 @@ class ItemList(models.Model):
         for goods in ItemList.objects.all():
             sum_count+=goods.count
         return sum_count
-    # @classmethod
-    # def totality(cls):
-    #     totality=(cls.count)*int(cls.price)
-    #     return totality
-    # 类方法不能调用属性
+
+
 
 

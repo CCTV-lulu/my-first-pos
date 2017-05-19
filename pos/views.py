@@ -24,6 +24,10 @@ def shopping_list(request):
                  'unit':goods[0].unit
              }
              ItemList.objects.create(**new_item)
+        item=ItemList.objects.filter(goods_id=request.POST['id'])
+        if item:
+            item[0].total=item[0].count*float(item[0].price)
+            item[0].save()
         return HttpResponse(ItemList.sum_count())
     return render(request, 'pos/shopping_list.html', {'goodlists': goodlists,'sum_count': ItemList.sum_count()})
 def shopping_cart(request):
@@ -34,14 +38,12 @@ def shopping_cart(request):
         if item:
             item[0].count=item[0].count+int(means)
             item[0].total=(item[0].count)*float(item[0].price)
-            print(item[0].total)
+            item[0].save()
+            print(type(item[0].total))
             if item[0].count==0:
                 item[0].delete()
             else:item[0].save()
-            quantity=item[0].count
-            total=item[0].total
-            sum_count=ItemList.sum_count()
-            result={'quantity':quantity,'total':total,'sum_count':sum_count}
+            result={'quantity':item[0].count,'total':item[0].total,'sum_count':ItemList.sum_count()}
         return JsonResponse(result)
     return render(request, 'pos/shopping_cart.html',{'itemlists':itemlists,'sum_count': ItemList.sum_count()})
 
