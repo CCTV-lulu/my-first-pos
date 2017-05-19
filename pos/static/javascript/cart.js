@@ -14,7 +14,7 @@ $(document).ready(function () {
           data:{id:id,count:count},
           success:function(result){
               $($('#'+id).next()).text(result.quantity)
-              $((($('#'+id).parent()).parent()).next()).text(result.totality+'元')
+              $((($('#'+id).parent()).parent()).next()).text(result.total+'元')
               $('#number').text(result.sum_count)
           }
       })
