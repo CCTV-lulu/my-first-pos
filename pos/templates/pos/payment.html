@@ -1,4 +1,59 @@
 {% extends 'pos/base.html' %}
 {% block content %}
-    
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+    <div class="cartinfo">
+        <div class="module">
+            <p>购物清单</p>
+        </div>
+        <p class="time">{{ time }}</p>
+        <div class="detail">
+            <table>
+                <tr>
+                    <th>分类</th>
+                    <th>名称</th>
+                    <th>单价</th>
+                    <th>单位</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                </tr>
+                {% for item_list in item_lists %}
+                <tr>
+                    <td>{{ item_list.type }}</td>
+                    <td>{{ item_list.name }}</td>
+                    <td>{{ item_list.price }}</td>
+                    <td>{{ item_list.unit }}</td>
+                    <td>{{ item_list.count }}</td>
+                    <td>{{ item_list.total }}元{% if item_list.free_count %}（原价：{{ item_list.totality }}元) {% endif %}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="give">
+            <p>赠送商品</p>
+        </div>
+        <div class="free">
+            <table>
+                <tr>
+                    <th>分类</th>
+                    <th>名称</th>
+                    <th>数量</th>
+                </tr>
+                {% for item_list in item_lists %}
+                <tr>
+                    {% if item_list.free_count %}
+                    <td>{{ item_list.type }}</td>
+                    <td>{{ item_list.name}}</td>
+                    <td>{{ item_list.free_count }}</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="bottom">
+            <p>总计：{{ sum_total }}元</p>
+            <p>节省：{{ sum_free_money }}元</p>
+            <button class="sure">确认</button>
+        </div>
+    </div>
 {% endblock content %}

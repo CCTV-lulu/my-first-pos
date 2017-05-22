@@ -31,13 +31,14 @@
                             <button class="right" id="{{ itemlist.goods_id }}"> + </button>
                         </div>
                     </td>
-                    <td><span id="subtotal">{{ itemlist.total }}元</span></td>
+                    <td><span id="subtotal">{{ itemlist.total }}元{% if itemlist.free_count %}（原价：{{ itemlist.totality }}元）
+                    {% endif %}</span></td>
                 </tr>
                 {% endfor %}
             </table>
         </div>
         <div class="bottom">
-            <p>总计：</p>
+            <span id="sum_count">总计：{{ sum_total }}元</span>
             <div class="pay"><a href="payment.html">付款</a></div>
         </div>
     </div>

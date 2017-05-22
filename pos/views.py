@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from django.db.models import Q
 import math
+import time
 # Create your views here.
 def homepage(request):
     return render(request, 'pos/homepage.html', {'sum_count': ItemList.sum_count()})
@@ -28,8 +29,13 @@ def shopping_list(request):
              }
              ItemList.objects.create(**new_item)
         item=ItemList.objects.filter(goods_id=request.POST['id'])
+        free_goods = PreferentialGoods.objects.filter(goods_id=item[0].goods_id)
         if item:
-            item[0].total=item[0].count*float(item[0].price)
+            if free_goods:
+                item[0].free_count = math.floor(item[0].count/3)
+                item[0].free_money=item[0].free_count*float(item[0].price)
+                item[0].totality=item[0].count*float(item[0].price)
+            item[0].total = (item[0].count - item[0].free_count) * float(item[0].price)
             item[0].save()
         return HttpResponse(ItemList.sum_count())
     return render(request, 'pos/shopping_list.html', {'goodlists': goodlists,'sum_count': ItemList.sum_count()})
@@ -43,18 +49,25 @@ def shopping_cart(request):
             item[0].count=item[0].count+int(means)
             if free_goods:
                 item[0].free_count=math.floor(item[0].count/3)
-            else:
-                item[0].free_count=0
+                item[0].free_money = item[0].free_count * float(item[0].price)
+                item[0].totality=item[0].count*float(item[0].price)
             item[0].total = (item[0].count-item[0].free_count) * float(item[0].price)
             item[0].save()
             if item[0].count==0:
                 item[0].delete()
             else:item[0].save()
-            result={'quantity':item[0].count,'total':item[0].total,'sum_count':ItemList.sum_count()}
+            result={'quantity':item[0].count,'total':item[0].total,'sum_count':ItemList.sum_count(),
+                    'totality':item[0].totality,'free_count':item[0].free_count,'sum_total':ItemList.sum_total()}
         return JsonResponse(result)
-    return render(request, 'pos/shopping_cart.html',{'itemlists':itemlists,'sum_count': ItemList.sum_count()})
+    return render(request, 'pos/shopping_cart.html',{'itemlists':itemlists,'sum_count': ItemList.sum_count(),
+                                                     'sum_total':ItemList.sum_total()})
 def payment(request):
-    return render(request,'pos/payment.html',{'sum_count':ItemList.sum_count()})
+    item_lists = ItemList.objects.all()
+    localtime = time.strftime("%Y年%m月%d日 %H:%M:%S",time.localtime(time.time()))
+    print(localtime)
+    return render(request,'pos/payment.html',{'item_lists':item_lists,'sum_count':ItemList.sum_count(),
+                                              'sum_total':ItemList.sum_total(),'sum_free_money':ItemList.sum_free_money(),
+                                              'time':localtime})
 
 
 
