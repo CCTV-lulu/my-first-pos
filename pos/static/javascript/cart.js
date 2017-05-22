@@ -17,7 +17,7 @@ $(document).ready(function () {
               $('#'+id).parent().parent().next().text(result.total+'元')
               $('#number').text(result.sum_count)
               if(result.quantity==0){
-                   $('#'+id).parent().parent().parent().detach()
+                   $('#'+id).parents('tr').detach()
               }
           }
       })

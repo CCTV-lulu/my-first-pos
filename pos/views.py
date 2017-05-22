@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from .models import GoodsList
 from .models import ItemList
+from .models import PreferentialGoods
 from django.http import HttpResponse
 from django.http import JsonResponse
+from django.db.models import Q
+import math
 # Create your views here.
 def homepage(request):
     return render(request, 'pos/homepage.html', {'sum_count': ItemList.sum_count()})
@@ -35,18 +38,23 @@ def shopping_cart(request):
     if request.method=='POST':
         means=request.POST['count']
         item=ItemList.objects.filter(goods_id=request.POST['id'])
+        free_goods = PreferentialGoods.objects.filter(goods_id=item[0].goods_id)
         if item:
             item[0].count=item[0].count+int(means)
-            item[0].total=(item[0].count)*float(item[0].price)
+            if free_goods:
+                item[0].free_count=math.floor(item[0].count/3)
+            else:
+                item[0].free_count=0
+            item[0].total = (item[0].count-item[0].free_count) * float(item[0].price)
             item[0].save()
-            print(type(item[0].total))
             if item[0].count==0:
                 item[0].delete()
             else:item[0].save()
             result={'quantity':item[0].count,'total':item[0].total,'sum_count':ItemList.sum_count()}
         return JsonResponse(result)
     return render(request, 'pos/shopping_cart.html',{'itemlists':itemlists,'sum_count': ItemList.sum_count()})
-
+def payment(request):
+    return render(request,'pos/payment.html',{'sum_count':ItemList.sum_count()})
 
 
 

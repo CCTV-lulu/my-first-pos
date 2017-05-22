@@ -1,11 +1,4 @@
-.active2 {
-     color: #999999;
-     background-color: #333333;
-}
-.active4 {
-     color: #efefef;
-    background: black
-}
+
 .cartinfo{
     margin: 50px 150px 150px;
     border: solid 1px;
@@ -74,4 +67,23 @@
 .countinfo  {
     height: 35px;
     line-height: 35px;
+}
+.bottom{
+    margin-left: 700px;
+    margin-bottom: 30px;
+}
+.pay{
+    background-color: royalblue;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 70px;
+    font-size: large;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+}
+.pay a{
+    color: white;
+    text-decoration: none;
 }

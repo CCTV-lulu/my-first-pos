@@ -13,6 +13,7 @@ class ItemList(models.Model):
     unit=models.TextField()
     count=models.IntegerField()
     total=models.FloatField(default=0)
+    free_count=models.IntegerField(default=0)
     @classmethod
     def sum_count(cls):
         sum_count = 0
@@ -20,6 +21,13 @@ class ItemList(models.Model):
             sum_count+=goods.count
         return sum_count
 
+class PreferentialGoods(models.Model):
+    goods_id=models.IntegerField()
+    type=models.TextField()
+    name=models.TextField()
+    unit=models.TextField()
+    price=models.FloatField(default=0)
+    activity=models.TextField()
 
 
 
