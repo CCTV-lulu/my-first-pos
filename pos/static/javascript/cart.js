@@ -27,6 +27,7 @@ $(document).ready(function () {
               $('#sum_count').text('总计：'+result.sum_total.toFixed(2)+'元')
               if(result.quantity==0){
                    $('#'+id).parents('tr').detach()
+
               }
           }
       })

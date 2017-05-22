@@ -63,8 +63,9 @@ def shopping_cart(request):
                                                      'sum_total':ItemList.sum_total()})
 def payment(request):
     item_lists = ItemList.objects.all()
+    if request.method=='POST':
+        ItemList.objects.all().delete()
     localtime = time.strftime("%Y年%m月%d日 %H:%M:%S",time.localtime(time.time()))
-    print(localtime)
     return render(request,'pos/payment.html',{'item_lists':item_lists,'sum_count':ItemList.sum_count(),
                                               'sum_total':ItemList.sum_total(),'sum_free_money':ItemList.sum_free_money(),
                                               'time':localtime})
