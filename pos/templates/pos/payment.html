@@ -2,7 +2,7 @@
 {% block content %}
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/payment.css' %}">
-    <link rel="stylesheet" href="{% static 'javascript/payment.js' %}">
+    <script src="{% static 'javascript/payment.js' %}"></script>
     <div class="cartinfo">
         <div class="module">
             <p>购物清单</p>
@@ -54,7 +54,7 @@
         <div class="bottom">
             <p>总计：{{ sum_total }}元</p>
             <p>节省：{{ sum_free_money }}元</p>
-            <div id="sure"onclick=location.href="/shopping_list">确认</div>
+            <div class="sure" id="1">确认</div>
         </div>
     </div>
 {% endblock content %}
